@@ -70,10 +70,9 @@ Form.prototype.createLi = function () {
   dinnerDel.innerHTML = `<i class="fas fa-trash-alt" data-index="${this.index}"></i>`
   dinnerDel.dataset.index = this.index
   dinnerDel.addEventListener('click', e => {
-    console.log(e.target.dataset.index)
     dinnerList.splice(e.target.dataset.index, 1)
     createList()
-    roulette()
+    createRoulette()
   })
 
   dinnerLi.appendChild(dinnerDel)
@@ -84,7 +83,7 @@ Form.prototype.createLi = function () {
 
 
 
-function roulette () {
+function createRoulette () {
   face.className = 'face hide'
   store.innerHTML = ''
   storeBg.innerHTML = ''
@@ -118,6 +117,13 @@ function roulette () {
 
   })
 
+  if(dinnerList.length >=3 && dinnerList.length%2){
+    console.log('大於等於三的基數')  
+
+    document.querySelector('.store-bg-item:last-child div').style.background = '#f5a0a1'
+  }
+
+
 }
 
 
@@ -141,7 +147,7 @@ function createList () {
 
 
 createList()
-roulette()
+createRoulette()
 
 
 
@@ -160,7 +166,7 @@ btnAdd.addEventListener('click', e => {
   // console.log(dinnerList)
 
   createList()
-  roulette()
+  createRoulette()
 })
 
 
@@ -174,7 +180,7 @@ btnAdd.addEventListener('click', e => {
 //   console.log(index)
 //   dinnerList.splice(index, 1)
 //   createList()
-//   roulette()
+//   createRoulette()
 //   console.log(e.target.nodeName)
 // })
 

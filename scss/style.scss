@@ -499,7 +499,7 @@ html {
     font-family: "Noto Sans TC", sans-serif;
     letter-spacing: 1px;
     background: #f7d133;
-    color:#000;
+    color:#213b52;
     padding: 10px;
     box-sizing: border-box;
     border: 0;
@@ -524,6 +524,11 @@ html {
     max-width: 350px;
     height: 500px;
     margin: 0;
+
+    .storeList {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
   }
 }
 
@@ -541,14 +546,6 @@ html {
   }
 }
 
-@media (min-width: 768px) {
-  .from {
-    .storeList {
-      flex-grow: 1;
-      overflow-y: auto;
-    }
-  }
-}
 
 :focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
