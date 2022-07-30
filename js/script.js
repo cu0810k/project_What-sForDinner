@@ -151,11 +151,13 @@ btnAdd.addEventListener('click', e => {
   e.preventDefault()
   let dinnerItem = input.value.trim()
   if (!dinnerItem) {
-    return console.log('請填寫')
+    h1.innerHTML = `不能空白啦<i class="far fa-angry"></i>`
+    return 
   }
 
   dinnerList.push(dinnerItem)
-  console.log(dinnerList)
+  input.value = ''
+  // console.log(dinnerList)
 
   createList()
   roulette()
