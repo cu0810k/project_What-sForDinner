@@ -19,21 +19,39 @@ html {
   background: #79c6d9;
   font-family: "Noto Sans TC", sans-serif;
   overflow-x: hidden;
-}
-
-@media (min-width: 768px) {
-  body,
-  html {
+  @media (min-width: 768px) {
     font-size: 16px;
   }
 }
 
 .container {
   padding-top: 30px;
+  @media (min-width: 768px) {
+    width: 100vw;
+    height: 100vh;
+    gap: 0 9vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+  @media (min-width: 992px) {
+    gap: 0 5.208vw;
+  }
 }
 
 .roulette {
   margin-bottom: 2.084vw;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    transform: scale(1.1);
+    transform-origin: left;
+  }
+  @media (min-width: 992px) {
+    transform: scale(1);
+  }
 }
 
 .roulette-circle {
@@ -46,6 +64,13 @@ html {
   z-index: 1;
   margin: auto;
   margin-bottom: -5.208vw;
+
+  @media (min-width: 768px) {
+    width: 31.25vw;
+    height: 31.25vw;
+    border: 1.302vw solid #315582;
+    margin-bottom: -2.604vw;
+  }
 }
 
 .roulette-bottom {
@@ -84,35 +109,7 @@ html {
   }
 }
 
-
-
-
 @media (min-width: 768px) {
-  .container {
-    width: 100vw;
-    height: 100vh;
-    gap: 0 9vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
-  }
-
-  .roulette {
-    margin-bottom: 0;
-    transform: scale(1.1);
-    transform-origin: left;
-  }
-
-  .roulette-circle {
-    width: 31.25vw;
-    height: 31.25vw;
-    border: 1.302vw solid #315582;
-    margin-bottom: -2.604vw;
-  }
-
   .roulette-bottom {
     width: 13.021vw;
     border-right: 0.521vw solid transparent;
@@ -127,17 +124,6 @@ html {
       height: 20px;
       top: 7.813vw;
     }
-  }
-}
-
-
-@media (min-width: 992px) {
-  .container {
-    gap: 0 5.208vw;
-  }
-
-  .roulette {
-    transform: scale(1);
   }
 }
 
@@ -159,6 +145,10 @@ html {
   box-shadow: 0px 0px 0px 2px #fff;
   padding-top: 8.334vw;
 
+  @media (min-width: 768px) {
+    padding-top: 4.167vw;
+  }
+
   .eye {
     width: 4.166vw;
     height: 4.166vw;
@@ -168,6 +158,11 @@ html {
     position: absolute;
     top: 30%;
     transform: translateX(-50%);
+
+    @media (min-width: 768px) {
+      width: 2.083vw;
+      height: 2.083vw;
+    }
 
     &:nth-child(1) {
       left: 25%;
@@ -189,6 +184,10 @@ html {
     transform: translateX(-50%);
     animation: open 1s linear infinite alternate-reverse;
 
+    @media (min-width: 768px) {
+      height: 0.521vw;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -198,6 +197,11 @@ html {
       position: absolute;
       border-top: 0px;
       transform: translateX(-50%);
+
+      @media (min-width: 768px) {
+        width: 2.083vw;
+        height: 1.563vw;
+      }
     }
 
     &::before {
@@ -225,24 +229,6 @@ html {
 }
 
 @media (min-width: 768px) {
-  .face {
-    padding-top: 4.167vw;
-
-    .eye {
-      width: 2.083vw;
-      height: 2.083vw;
-    }
-    .mouth {
-      height: 0.521vw;
-
-      &::before,
-      &::after {
-        width: 2.083vw;
-        height: 1.563vw;
-      }
-    }
-  }
-
   @keyframes open {
     0% {
       height: 2.604vw;
@@ -259,7 +245,6 @@ html {
 .pointer {
   width: 3.126vw;
   height: 3.126vw;
-
   border-radius: 50%;
   background: #f7d133;
   position: absolute;
@@ -269,12 +254,15 @@ html {
   transform: translate(-50%, -50%) rotate(0deg);
   transform-origin: center;
 
+  @media (min-width: 768px) {
+    width: 1.563vw;
+    height: 1.563vw;
+  }
+
   &::before {
     content: "";
-
     width: 1.042vw;
     height: 1.042vw;
-
     background: #203d53;
     border-radius: 50%;
     position: absolute;
@@ -282,6 +270,11 @@ html {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @media (min-width: 768px) {
+      width: 0.521vw;
+      height: 0.521vw;
+    }
   }
 
   &::after {
@@ -292,21 +285,9 @@ html {
     border-right: 1.562vw solid transparent;
     border-bottom: 6.042vw solid #f7d133;
     border-radius: 0.73vw;
-
     bottom: 57%;
-  }
-}
 
-@media (min-width: 768px) {
-  .pointer {
-    width: 1.563vw;
-    height: 1.563vw;
-
-    &::before {
-      width: 0.521vw;
-      height: 0.521vw;
-    }
-    &::after {
+    @media (min-width: 768px) {
       border-left: 0.781vw solid transparent;
       border-right: 0.781vw solid transparent;
       border-bottom: 3.021vw solid #f7d133;
@@ -342,12 +323,8 @@ html {
     &:nth-child(even) {
       color: #2c537c;
     }
-  }
-}
 
-@media (min-width: 768px) {
-  .store-txt {
-    div {
+    @media (min-width: 768px) {
       height: 15.625vw;
       padding-top: 2.604vw;
     }
@@ -380,12 +357,8 @@ html {
     border-radius: 50%;
     text-align: center;
     transform: rotate(60deg);
-  }
-}
 
-@media (min-width: 768px) {
-  .store-bg-item{
-    div {
+    @media (min-width: 768px) {
       width: 31.25vw;
       height: 31.25vw;
     }
@@ -405,6 +378,23 @@ html {
   align-items: center;
   margin: auto;
   margin-top: 30px;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 350px;
+    height: 500px;
+    margin: 0;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 400px;
+    height: 600px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 500px;
+    height: 600px;
+  }
 
   h1 {
     width: 100%;
@@ -453,6 +443,11 @@ html {
   .storeList {
     width: 100%;
 
+    @media (min-width: 768px) {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
     li {
       color: #7c7c7c;
       background: #f2f2f2;
@@ -499,7 +494,7 @@ html {
     font-family: "Noto Sans TC", sans-serif;
     letter-spacing: 1px;
     background: #f7d133;
-    color:#213b52;
+    color: #213b52;
     padding: 10px;
     box-sizing: border-box;
     border: 0;
@@ -512,58 +507,25 @@ html {
     width: 20vw;
     height: 20vw;
 
-    &:before {
-      content: "點我轉下去";
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .from {
-    width: 100%;
-    max-width: 350px;
-    height: 500px;
-    margin: 0;
-
-    .storeList {
-      flex-grow: 1;
-      overflow-y: auto;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  .from {
-    max-width: 400px;
-    height: 600px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .from {
-    max-width: 500px;
-    height: 600px;
-  }
-}
-
-
-:focus-visible {
-  outline: -webkit-focus-ring-color auto 0px;
-}
-
-@media (min-width: 768px) {
-  .from {
-    .btn-start {
+    @media (min-width: 768px) {
       position: static;
       border-radius: 3px;
       transform: translateY(0%);
       width: 100%;
       height: auto;
       margin-top: 20px;
+    }
 
-      &::before {
+    &:before {
+      content: "點我轉下去";
+
+      @media (min-width: 768px) {
         content: "交給命運吧！";
       }
     }
   }
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
 }

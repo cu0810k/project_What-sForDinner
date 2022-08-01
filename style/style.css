@@ -13,19 +13,63 @@ html {
   font-family: "Noto Sans TC", sans-serif;
   overflow-x: hidden;
 }
-
 @media (min-width: 768px) {
   body,
 html {
     font-size: 16px;
   }
 }
+
 .container {
   padding-top: 30px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    gap: 0 9vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    gap: 0 5.208vw;
+  }
 }
 
 .roulette {
   margin-bottom: 2.084vw;
+}
+@media (min-width: 768px) {
+  .roulette {
+    margin-bottom: 0;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+}
+@media (min-width: 992px) {
+  .roulette {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .roulette-circle {
@@ -38,6 +82,14 @@ html {
   z-index: 1;
   margin: auto;
   margin-bottom: -5.208vw;
+}
+@media (min-width: 768px) {
+  .roulette-circle {
+    width: 31.25vw;
+    height: 31.25vw;
+    border: 1.302vw solid #315582;
+    margin-bottom: -2.604vw;
+  }
 }
 
 .roulette-bottom {
@@ -78,41 +130,6 @@ html {
 }
 
 @media (min-width: 768px) {
-  .container {
-    width: 100vw;
-    height: 100vh;
-    gap: 0 9vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-top: 0;
-  }
-  .roulette {
-    margin-bottom: 0;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-  }
-  .roulette-circle {
-    width: 31.25vw;
-    height: 31.25vw;
-    border: 1.302vw solid #315582;
-    margin-bottom: -2.604vw;
-  }
   .roulette-bottom {
     width: 13.021vw;
     border-right: 0.521vw solid transparent;
@@ -126,15 +143,6 @@ html {
   .roulette-bottom::after {
     height: 20px;
     top: 7.813vw;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    gap: 0 5.208vw;
-  }
-  .roulette {
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
 }
 /*--------------------------------------------*/
@@ -156,6 +164,11 @@ html {
           box-shadow: 0px 0px 0px 2px #fff;
   padding-top: 8.334vw;
 }
+@media (min-width: 768px) {
+  .face {
+    padding-top: 4.167vw;
+  }
+}
 .face .eye {
   width: 4.166vw;
   height: 4.166vw;
@@ -166,6 +179,12 @@ html {
   top: 30%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .face .eye {
+    width: 2.083vw;
+    height: 2.083vw;
+  }
 }
 .face .eye:nth-child(1) {
   left: 25%;
@@ -185,6 +204,11 @@ html {
           transform: translateX(-50%);
   animation: open 1s linear infinite alternate-reverse;
 }
+@media (min-width: 768px) {
+  .face .mouth {
+    height: 0.521vw;
+  }
+}
 .face .mouth::before, .face .mouth::after {
   content: "";
   width: 4.166vw;
@@ -194,6 +218,12 @@ html {
   border-top: 0px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .face .mouth::before, .face .mouth::after {
+    width: 2.083vw;
+    height: 1.563vw;
+  }
 }
 .face .mouth::before {
   left: 40%;
@@ -224,20 +254,6 @@ html {
   }
 }
 @media (min-width: 768px) {
-  .face {
-    padding-top: 4.167vw;
-  }
-  .face .eye {
-    width: 2.083vw;
-    height: 2.083vw;
-  }
-  .face .mouth {
-    height: 0.521vw;
-  }
-  .face .mouth::before, .face .mouth::after {
-    width: 2.083vw;
-    height: 1.563vw;
-  }
   @-webkit-keyframes open {
     0% {
       height: 2.604vw;
@@ -270,6 +286,12 @@ html {
   -webkit-transform-origin: center;
           transform-origin: center;
 }
+@media (min-width: 768px) {
+  .pointer {
+    width: 1.563vw;
+    height: 1.563vw;
+  }
+}
 .pointer::before {
   content: "";
   width: 1.042vw;
@@ -283,6 +305,12 @@ html {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+@media (min-width: 768px) {
+  .pointer::before {
+    width: 0.521vw;
+    height: 0.521vw;
+  }
+}
 .pointer::after {
   content: "";
   display: block;
@@ -293,16 +321,7 @@ html {
   border-radius: 0.73vw;
   bottom: 57%;
 }
-
 @media (min-width: 768px) {
-  .pointer {
-    width: 1.563vw;
-    height: 1.563vw;
-  }
-  .pointer::before {
-    width: 0.521vw;
-    height: 0.521vw;
-  }
   .pointer::after {
     border-left: 0.781vw solid transparent;
     border-right: 0.781vw solid transparent;
@@ -310,6 +329,7 @@ html {
     border-radius: 0.365vw;
   }
 }
+
 /*--------------------------------------------*/
 .store-txt {
   z-index: 3;
@@ -337,13 +357,13 @@ html {
 .store-txt div:nth-child(even) {
   color: #2c537c;
 }
-
 @media (min-width: 768px) {
   .store-txt div {
     height: 15.625vw;
     padding-top: 2.604vw;
   }
 }
+
 /*--------------------------------------------*/
 .store-bg-item {
   display: inline-block;
@@ -365,13 +385,13 @@ html {
   -webkit-transform: rotate(60deg);
           transform: rotate(60deg);
 }
-
 @media (min-width: 768px) {
   .store-bg-item div {
     width: 31.25vw;
     height: 31.25vw;
   }
 }
+
 /*--------------------------------------------*/
 .from {
   background: #fff;
@@ -392,6 +412,26 @@ html {
           align-items: center;
   margin: auto;
   margin-top: 30px;
+}
+@media (min-width: 768px) {
+  .from {
+    width: 100%;
+    max-width: 350px;
+    height: 500px;
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  .from {
+    max-width: 400px;
+    height: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .from {
+    max-width: 500px;
+    height: 600px;
+  }
 }
 .from h1 {
   width: 100%;
@@ -436,6 +476,14 @@ html {
 }
 .from .storeList {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .from .storeList {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    overflow-y: auto;
+  }
 }
 .from .storeList li {
   color: #7c7c7c;
@@ -501,40 +549,6 @@ html {
   width: 20vw;
   height: 20vw;
 }
-.from .btn-start:before {
-  content: "點我轉下去";
-}
-
-@media (min-width: 768px) {
-  .from {
-    width: 100%;
-    max-width: 350px;
-    height: 500px;
-    margin: 0;
-  }
-  .from .storeList {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    overflow-y: auto;
-  }
-}
-@media (min-width: 992px) {
-  .from {
-    max-width: 400px;
-    height: 600px;
-  }
-}
-@media (min-width: 1200px) {
-  .from {
-    max-width: 500px;
-    height: 600px;
-  }
-}
-:focus-visible {
-  outline: -webkit-focus-ring-color auto 0px;
-}
-
 @media (min-width: 768px) {
   .from .btn-start {
     position: static;
@@ -545,7 +559,16 @@ html {
     height: auto;
     margin-top: 20px;
   }
-  .from .btn-start::before {
+}
+.from .btn-start:before {
+  content: "點我轉下去";
+}
+@media (min-width: 768px) {
+  .from .btn-start:before {
     content: "交給命運吧！";
   }
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
 }/*# sourceMappingURL=style.css.map */
